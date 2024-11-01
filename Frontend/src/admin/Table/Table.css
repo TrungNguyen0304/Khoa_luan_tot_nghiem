@@ -10,7 +10,9 @@
 th {
   border: none !important;
 }
-
+.Table{
+  margin-top:5%;
+}
 .Table:first-child {
   border-radius: 0.7rem !important;
 }

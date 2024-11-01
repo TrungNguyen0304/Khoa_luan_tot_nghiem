@@ -106,7 +106,6 @@ const AllCustomers = () => {
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>Phone Number</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -119,7 +118,6 @@ const AllCustomers = () => {
                   <td>{customer.firstName}</td>
                   <td>{customer.lastName}</td>
                   <td>{customer.email}</td>
-                  <td>{customer.password}</td>
                   <td>{customer.phoneNumber}</td>
                   <td>
                     <button

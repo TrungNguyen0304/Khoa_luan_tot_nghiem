@@ -13,17 +13,17 @@ const MainDash = () => {
   return (
     <div className="MainDash">
       <div className="header">
-        <h1>Dashboard</h1>
+        <h1>Tour Booking Dashboard</h1>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search tours..."
           value={searchTerm}
           onChange={handleSearchChange}
           className="search-input"
         />
       </div>
-      <Cards />
-      <Table />
+      <Cards searchTerm={searchTerm} />
+      <Table searchTerm={searchTerm} />
     </div>
   );
 };

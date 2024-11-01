@@ -52,7 +52,7 @@ const Sidebar = () => {
                 onClick={() => {
                   setSelected(index);
                   if (item.link) {
-                    navigate(item.link); // Navigate to the specified link if available
+                    navigate(item.link); 
                   }
                 }}
               >
