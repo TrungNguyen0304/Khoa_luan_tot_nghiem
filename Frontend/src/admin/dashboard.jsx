@@ -1,7 +1,7 @@
 import React from "react";
-import '../adminApp.css';
+import "../adminApp.css";
 import MainDash from "../admin/MainDash/MainDash";
-import RightSide from "../admin/RigtSide/RightSide";
+// import RightSide from "../admin/RigtSide/RightSide";
 import Sidebar from "../admin/siderBar/Sidebar";
 export default function dashboard() {
   return (
@@ -9,7 +9,7 @@ export default function dashboard() {
       <div className="AppGlass">
         <Sidebar />
         <MainDash />
-        <RightSide />
+        {/* <RightSide /> */}
       </div>
     </div>
   );

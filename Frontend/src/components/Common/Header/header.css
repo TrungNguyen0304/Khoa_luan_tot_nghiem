@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   animation: smothScroll 1s forwards;
-  background: var(--white);
+  background: #003c71;
   z-index: 999;
   box-shadow: var(--bs-box-shadow-sm) !important;
 }
@@ -19,18 +19,13 @@
   }
 }
 
-.is-sticky .navbar .navbar-brand a,
-.is-sticky .navbar .offcanvas-body a {
-  color: var(--black) !important;
-}
-
 .is-sticky .toggle_btn {
   color: var(--primaryClr) !important;
 }
 
 header {
   position: absolute;
-  background-color:black;
+  background-color: #003c71;
   top: 0;
   z-index: 999;
   padding: 12px 0px;
@@ -39,7 +34,7 @@ header {
 
 header .navbar .navbar-brand a {
   font-size: 22px;
-  color: var(--white);
+  color: white;
   line-height: 150%;
   font-family: var(--fontFamily1);
   font-weight: bold;
@@ -57,7 +52,7 @@ header .navbar .offcanvas-body a {
 }
 
 header .navbar .offcanvas-body .dropdown-menu a {
-  color:black !important
+  color: black !important;
 }
 
 header .navbar .offcanvas-body a:hover {
@@ -70,6 +65,20 @@ header .navbar .offcanvas-body .dropdown-menu {
 
 header .navbar .offcanvas-body .dropdown-menu .dropdown-item {
   color: var(--black) !important;
+}
+.header-section .nav-link {
+  margin-right: 1rem;
+}
+
+.user-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: white;
+}
+
+.header-section .dropdown-menu .dropdown-item {
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 991px) {
@@ -88,7 +97,7 @@ header .navbar .offcanvas-body .dropdown-menu .dropdown-item {
     border: 1px solid gainsboro;
   }
 
-  .offcanvas-header .logo{
+  .offcanvas-header .logo {
     font-size: 26px;
     color: var(--black) !important;
     font-family: var(--fontFamily1);
@@ -98,15 +107,11 @@ header .navbar .offcanvas-body .dropdown-menu .dropdown-item {
 
   .offcanvas-body .nav-link {
     padding: 12px 0px;
-    color:var(--black);
+    color: var(--black);
   }
 
-  .offcanvas-body .dropdown-item{
+  .offcanvas-body .dropdown-item {
     padding: 12px 10px;
-    color:var(--black);
+    color: var(--black);
   }
-
-
-
-
 }

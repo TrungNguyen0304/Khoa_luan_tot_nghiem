@@ -1,15 +1,16 @@
+// Sidebar.js
 import React, { useState } from "react";
 import "./Sidebar.css";
-import Logo from "../../assets/admin/imgs//logo.png";
-import { UilSignOutAlt } from "@iconscout/react-unicons";
+import Logo from "../../assets/admin/imgs/logo.png";
+import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { SidebarData } from "../Data/Data";
-import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
-
   const [expanded, setExpaned] = useState(true);
+  const navigate = useNavigate(); // Initialize navigate
 
   const sidebarVariants = {
     true: {
@@ -19,7 +20,7 @@ const Sidebar = () => {
       left: "-60%",
     },
   };
-  console.log(window.innerWidth);
+
   return (
     <>
       <div
@@ -48,7 +49,12 @@ const Sidebar = () => {
               <div
                 className={selected === index ? "menuItem active" : "menuItem"}
                 key={index}
-                onClick={() => setSelected(index)}
+                onClick={() => {
+                  setSelected(index);
+                  if (item.link) {
+                    navigate(item.link); // Navigate to the specified link if available
+                  }
+                }}
               >
                 <item.icon />
                 <span>{item.heading}</span>

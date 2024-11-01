@@ -2,22 +2,20 @@ import React from "react";
 import Banner from "../../components/Banner/Banner";
 import AdvanceSearch from "../../components/AdvanceSearch/AdvanceSearch";
 import Features from "../../components/Features/Features";
-import { Container, Row, Col,  } from "react-bootstrap";
-
+import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import "./home.css";
 
-
 import Gallery from "../../components/Gallery/Gallery";
 import Cards from "../../components/Cards/Cards";
 import { destinationsData, popularsData } from "../../utils/data";
 import PopularCard from "../../components/Cards/PopularCard";
 
-
 const Home = () => {
+
   var settings = {
     dots: false,
     infinite: true,
@@ -67,15 +65,13 @@ const Home = () => {
     ],
   };
 
-
-
   return (
     <>
       <Banner />
       <AdvanceSearch />
       <Features />
 
-      {/* tour seciton start */}
+      {/* tour section start */}
 
       <section className="tours_section slick_slider">
         <Container>
@@ -91,9 +87,7 @@ const Home = () => {
             <Col md="12">
               <Slider {...settings}>
                 {destinationsData.map((destination, inx) => {
-                  return (
-                    <Cards destination={destination} key={inx} />
-                  );
+                  return <Cards destination={destination} key={inx} />;
                 })}
               </Slider>
             </Col>
@@ -101,28 +95,28 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* tour seciton start */}
+      {/* tour section end */}
 
       <section className="popular py-5">
-      <Container>
-        <Row>
-          <Col md="12">
-            <div className="main_heading">
-              <h1> Popular Activities </h1>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-        {popularsData.map((val, inx)=>{
-          return(
-          <Col  md={3} sm={6} xs={12} className="mb-5" key={inx}>
-            <PopularCard val={val} />
-          </Col>
-        )
-        })}
-        </Row>
-      </Container>
-    </section>
+        <Container>
+          <Row>
+            <Col md="12">
+              <div className="main_heading">
+                <h1> Popular Activities </h1>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            {popularsData.map((val, inx) => {
+              return (
+                <Col md={3} sm={6} xs={12} className="mb-5" key={inx}>
+                  <PopularCard val={val} />
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+      </section>
 
       <section className="call_us">
         <Container>
@@ -130,7 +124,7 @@ const Home = () => {
             <Col md="8">
               <h5 className="title">CALL TO ACTION</h5>
               <h2 className="heading">
-                READY FOR UNFORGATABLE TRAVEL. REMEMBER US!
+                READY FOR UNFORGETTABLE TRAVEL. REMEMBER US!
               </h2>
               <p className="text">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
