@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   const [expanded, setExpaned] = useState(true);
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
   const sidebarVariants = {
     true: {

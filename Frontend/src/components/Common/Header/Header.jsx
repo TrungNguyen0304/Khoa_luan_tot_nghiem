@@ -61,7 +61,7 @@ const Header = () => {
       <Container>
         <Navbar expand="lg" className="p-0">
           <Navbar.Brand>
-            <NavLink to="/">Weekendmonks</NavLink>
+            <NavLink to="/">TRAVEL</NavLink>
           </Navbar.Brand>
 
           <Navbar.Offcanvas
