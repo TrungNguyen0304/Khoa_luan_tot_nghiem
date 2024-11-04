@@ -4,7 +4,8 @@ const bcrypt = require("bcrypt");
 // API to add a new destination
 const createDestination = async (req, res) => {
   try {
-    const { DestinationName, Images, Tours } = req.body;
+    const { DestinationName, Tours } = req.body;
+    const Images = req.file ? req.file.path : "";
     const newDestination = new Destination({
       DestinationName,
       Images,
@@ -12,12 +13,12 @@ const createDestination = async (req, res) => {
     });
     await newDestination.save();
     res.status(201).json({
-      message: "Destination added successfully!",
+      message: "Đã thêm địa danh thành công!",
       destination: newDestination,
     });
   } catch (error) {
-    console.error("Error adding destination:", error);
-    res.status(500).json({ message: "Error adding destination", error });
+    console.error("Lỗi khi thêm đích:", error);
+    res.status(500).json({ message: "Lỗi khi thêm địa danh", error });
   }
 };
 
@@ -27,21 +28,21 @@ const deleteDestination = async (req, res) => {
   try {
     const deleteDestination = await Destination.findByIdAndDelete(id);
     if (!deleteDestination) {
-      return res.status(404).json({ message: "Destination does not exist." });
+      return res.status(404).json({ message: "Địa danh không tồn tại." });
     }
-    res
-      .status(200)
-      .json({ message: "The destination has been successfully deleted" });
+    res.status(200).json({ message: "Địa danh đã được xóa thành công" });
   } catch (error) {
-    console.error("Error when deleting destination:", error);
-    res.status(500).json({ message: "Internal server error." });
+    console.error("Lỗi khi xóa địa danh:", error);
+    res.status(500).json({ message: "Lỗi máy chủ nội bộ." });
   }
 };
 
 // Api edit destination
 const editDestination = async (req, res) => {
   const { id } = req.params;
-  const { DestinationName, Images, Tours } = req.body;
+  const { DestinationName, Tours } = req.body;
+  const Images = req.file ? req.file.path : "";
+
   try {
     const updatedDestination = await Destination.findByIdAndUpdate(
       id,
@@ -49,15 +50,15 @@ const editDestination = async (req, res) => {
       { new: true, runValidators: true }
     );
     if (!updatedDestination) {
-      return res.status(404).json({ message: "Destination does not exist." });
+      return res.status(404).json({ message: "Địa danh không tồn tại." });
     }
     res.status(200).json({
-      message: "Destination updated successfully!",
+      message: "Đã cập nhật địa danh thành công!",
       destination: updatedDestination,
     });
   } catch (error) {
-    console.error("Error when editing destination:", error);
-    res.status(500).json({ message: "Internal server error." });
+    console.error("Lỗi khi chỉnh sửa điạ danh:", error);
+    res.status(500).json({ message: "Lỗi máy chủ nội bộ." });
   }
 };
 
@@ -67,8 +68,8 @@ const getAllDestination = async (req, res) => {
     const destinations = await Destination.find({});
     res.status(200).json(destinations);
   } catch (error) {
-    console.error("Error getting list of destinations", error);
-    res.status(500).json({ message: "Internal server error." });
+    console.error("Lỗi lấy danh sách đia danh", error);
+    res.status(500).json({ message: "Lỗi máy chủ nội bộ." });
   }
 };
 
