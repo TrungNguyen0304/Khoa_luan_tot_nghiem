@@ -1,4 +1,7 @@
-const tourPackageSchema = new Schema({
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema; 
+
+const tourPackageSchema = new mongoose.Schema({
     package_name: { type: String, required: true },
     description: { type: String },
     price: { type: Number, required: true },
